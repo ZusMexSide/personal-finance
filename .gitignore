@@ -1,0 +1,13 @@
+# Seguridad: Nunca subir contraseñas
+.env
+
+# Basura de Python: Archivos compilados
+__pycache__/
+*.pyc
+
+# Entornos virtuales (si usaras venv)
+venv/
+env/
+
+# Archivos de sistema operativo
+.DS_Store
