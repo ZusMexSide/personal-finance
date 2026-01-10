@@ -5,10 +5,6 @@ from datetime import date
 
 app = FastAPI()
 
-# --- MODELOS DE DATOS (Pydantic) ---
-# Esto valida que los datos que lleguen del Frontend sean correctos.
-# Si falta un campo o el tipo de dato está mal, FastAPI devuelve error automáticamente.
-
 class TransferenciaDTO(BaseModel):
     id_cuenta_origen: int
     id_cuenta_destino: int
