@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanzas Personales</title>
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Mis Finanzas 💰</h1>
+        </header>
+
+        <section id="resumen-cuentas" class="cards-container">
+            <p>Cargando saldos...</p>
+        </section>
+
+        <div class="main-grid">
+            <section class="form-section">
+                <h2>Registrar Movimiento</h2>
+                <form id="form-transaccion">
+                    
+                    <div class="form-group">
+                        <label>Tipo:</label>
+                        <select id="tipo-movimiento" onchange="cambiarFormulario()">
+                            <option value="gasto">Gasto Simple</option>
+                            <option value="ingreso">Ingreso</option>
+                            <option value="transferencia">Transferencia entre Cuentas</option>
+                            <option value="pago_deuda">Pago de Deuda (Horag/MSI)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Monto:</label>
+                        <input type="number" id="monto" step="0.01" required placeholder="$0.00">
+                    </div>
+
+                    <div class="form-group" id="campo-cuenta-origen">
+                        <label>Cuenta Origen:</label>
+                        <select id="cuenta-origen" required></select>
+                    </div>
+
+                    <div class="form-group hidden" id="campo-cuenta-destino">
+                        <label>Cuenta Destino:</label>
+                        <select id="cuenta-destino"></select>
+                    </div>
+
+                    <div class="form-group hidden" id="campo-deuda">
+                        <label>Seleccionar Deuda:</label>
+                        <select id="select-deuda"></select>
+                    </div>
+
+                    <div class="form-group" id="campo-descripcion">
+                        <label>Descripción:</label>
+                        <input type="text" id="descripcion" placeholder="Ej. Comida tacos">
+                    </div>
+
+                    <div class="form-group" id="campo-categoria">
+                        <label>Categoría:</label>
+                        <select id="categoria">
+                            <option value="1">Comida</option>
+                            <option value="2">Transporte</option>
+                            <option value="3">Hogar</option>
+                            <option value="4">Entretenimiento</option>
+                            <option value="">(Sin categoría)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-save">Guardar</button>
+                </form>
+            </section>
+
+            <section class="chart-section">
+                <h2>Gastos del Mes</h2>
+                <canvas id="graficoGastos"></canvas>
+            </section>
+        </div>
+    </div>
+
+    <script src="app.js" defer></script>
+</body>
+</html>

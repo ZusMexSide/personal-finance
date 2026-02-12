@@ -1,0 +1,78 @@
+:root {
+    --primary: #2563eb;
+    --bg: #f3f4f6;
+    --card-bg: #ffffff;
+    --text: #1f2937;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1, h2 { text-align: center; }
+
+/* Tarjetas de Saldo */
+.cards-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto; /* Scroll horizontal en celular */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 10px;
+    min-width: 150px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.card h3 { margin: 0; font-size: 0.9rem; color: #6b7280; }
+.card p { margin: 5px 0 0; font-size: 1.5rem; font-weight: bold; color: var(--primary); }
+
+/* Layout Principal */
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Mitad formulario, mitad gráfica */
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .main-grid { grid-template-columns: 1fr; } /* En celular, una columna */
+}
+
+/* Formulario */
+.form-section, .chart-section {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-group { margin-bottom: 15px; }
+label { display: block; margin-bottom: 5px; font-weight: 500; }
+input, select { width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 5px; }
+.hidden { display: none; } /* Clase mágica para ocultar campos */
+
+.btn-save {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.btn-save:hover { background-color: #1d4ed8; }
