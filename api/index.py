@@ -29,7 +29,7 @@ class PagoDeudaDTO(BaseModel):
 
 # --- ENDPOINTS ---
 
-@app.get("/")
+@app.get("/api")
 def home():
     return {"mensaje": "API Finanzas Personales - Fase 2 Completa"}
 
